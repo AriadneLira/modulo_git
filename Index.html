@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário</title>
+</head>
+<body style="padding-top: 120px; background-color: #f7b0bc;">
+    <h1 style="display: flex; justify-content: center;">Formulário do Exercício 7</h1>
+    <form id="meuFormulario" action="#" method="post">
+        <div style="display: flex; justify-content: center; padding-bottom: 10px;" class="Number_A">
+            <label  style="padding-right: 10px;" for="A">Valor A</label>
+            <input  id="campoA" type="number" name="campoA" required/>
+            <br"/>
+        </div>
+        <div style="display: flex; justify-content: center; padding-bottom: 10px;" class="Number_B">
+            <label style="padding-right: 10px;" for="B">Valor B</label>
+            <input  id="campoB" type="number" name="campoB" required/>
+            <br />
+        </div>
+        <div style="display: flex; justify-content: center;">
+            <input type="submit" value="Enviar"/>
+        </div>
+    </form>
+    <script>
+        document.getElementById('meuFormulario').addEventListener('submit', function (event) {
+            event.preventDefault(); // Impede o envio do formulário padrão.
+
+            // Obtém os valores dos campos A e B
+            var A = parseFloat(document.getElementById('campoA').value);
+            var B = parseFloat(document.getElementById('campoB').value);
+
+            // Realiza a validação
+            if (!isNaN(A) && !isNaN(B) && B > A) {
+                alert("Formulário válido! B é maior que A.");
+                // Aqui você pode adicionar código para enviar o formulário se desejar.
+            } else {
+                alert("Erro: B deve ser maior que A ou algum campo está vazio. Por favor, corrija os valores.");
+            }
+        });
+    </script>
+</body>
+</html>
