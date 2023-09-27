@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Tarefas com jQuery</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Sofia+Sans+Condensed:wght@500&display=swap" rel="stylesheet">
+    <style>
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        li {
+            cursor: pointer;
+        }
+        .completed {
+            text-decoration: line-through;
+        }
+    </style>
+</head>
+<body>
+    <style>
+        * {
+            box-sizing: border-box;
+            background-color: rgb(211, 221, 230);
+        }
+        h1 {
+            display: flex;
+            justify-content: center;
+            padding-top: 200px;
+            font-family: 'Sofia Sans Condensed';
+        }
+        input {
+            margin-right: 5px;
+            border-style: inset;
+            border-width: 1px;
+            background-color: rgb(255, 255, 255);
+            height: 23px;
+        }
+        button {
+            border-width: 1px;
+            font-size: 15px;
+            font-family: 'Sofia Sans Condensed';
+        }
+        form {
+            display: flex;
+            justify-content: center;
+            padding-right: 15px;
+        }
+        ul {
+            display: flex;
+            justify-content: center;
+            list-style-type: circle;
+            flex-direction: column;
+            align-items: center;
+        }
+    </style>
+    <h1>Lista de Tarefas</h1>
+    <form id="task-form">
+        <div>
+            <input type="text" id="task-input" placeholder="Nome da tarefa">
+        </div>
+        <br/>
+        <div>
+            <button type="submit">Cadastrar</button>
+        </div>
+    </form>
+    <ul id="task-list">
+    </ul>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        function addTask() {
+            const taskText = $('#task-input').val().trim();
+            if (taskText !== '') {
+                const listItem = $('<li>' + taskText + '</li>');
+                $('#task-list').append(listItem);
+                $('#task-input').val('');
+                listItem.click(function() {
+                    $(this).toggleClass('completed');
+                });
+            }
+        }
+        $('#task-form').submit(function(e) {
+            e.preventDefault();
+            addTask();
+        });
+    </script>
+</body>
+</html>
