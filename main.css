@@ -1,0 +1,78 @@
+* { 
+    box-sizing: border-box;
+}
+
+#cadastro-form {
+    background-color: rgb(241, 214, 230);
+    column-width: 45%;
+    margin-left: 400px;
+    margin-right: 400px;
+}
+
+h1 {
+    display: flex;
+    justify-content: center;
+    margin-top: 100px;
+    padding-top: 30px;
+}
+
+#nome {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 5px;
+}
+.nome_II {
+    margin-right: 50px;
+}
+
+#email {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 5px;
+}
+.email_II {
+    margin-right: 113px;
+}
+
+#telefone {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 5px;
+}
+.telefone_II {
+    margin-right: 101px;
+}
+
+#cpf {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 5px;
+}
+.cpf_II {
+    margin-right: 128px;
+}
+
+#endereço {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 5px;
+}
+.endereço_II {
+    margin-right: 30px;
+}
+
+#cep {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 5px;
+}
+.cep_II {
+    margin-right: 128px;
+}
+
+#cadastrar {
+    display: flex;
+    justify-content: center;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
